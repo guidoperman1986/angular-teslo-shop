@@ -1,3 +1,4 @@
+import { JsonPipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { rxResource, toSignal } from '@angular/core/rxjs-interop';
 import { ProductCardComponent } from '@products/components/product-card/product-card.component';

@@ -1,6 +1,10 @@
 <div class="card card-compact bg-base-100 shadow-xl animate-fadeIn">
   <figure>
-    <img [src]="product().images | productImage" [alt]="product().title" />
+    <img 
+      [src]="product().images | productImage | fallbackImage:'assets/images/placeholder.png'" 
+      [alt]="product().title" 
+      (error)="onImageError($event)"
+    />
   </figure>
   <div class="card-body">
     <h2

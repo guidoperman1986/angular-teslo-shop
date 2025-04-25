@@ -8,24 +8,19 @@ const baseUrl = environment.baseUrl;
 })
 export class ProductImagePipe implements PipeTransform {
   transform(value: null | string | string[]): string {
-    if (value === null) {
+    const cloudinaryUrl = 'https://res.cloudinary.com/dbewojbpv/image/upload';
+
+    if (value?.length === 0) {
       return './assets/images/no-image.jpg';
     }
 
-    if (typeof value === 'string' && value.startsWith('blob:')) {
-      return value;
-    }
-
-    if (typeof value === 'string') {
-      return `${baseUrl}/files/product/${value}`;
-    }
-
-    const image = value.at(0);
+    const image = Array.isArray(value) ? value!.at(0) : value
 
     if (!image) {
       return './assets/images/no-image.jpg';
     }
 
-    return `${baseUrl}/files/product/${image}`;
+    console.log(`${cloudinaryUrl}/${image}`);
+    return `${cloudinaryUrl}/${image}`;
   }
 }

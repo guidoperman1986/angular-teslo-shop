@@ -7,14 +7,12 @@ import {
   ProductsResponse,
 } from '@products/interfaces/product.interface';
 import {
-  delay,
   forkJoin,
   map,
   Observable,
   of,
-  pipe,
   switchMap,
-  tap,
+  tap
 } from 'rxjs';
 import { environment } from 'src/environments/environment';
 

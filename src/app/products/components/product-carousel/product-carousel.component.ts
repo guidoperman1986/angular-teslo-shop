@@ -15,10 +15,11 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { ProductImagePipe } from '@products/pipes/product-image.pipe';
+import { FallbackImagePipe } from "../../pipes/fallback-image.pipe";
 
 @Component({
   selector: 'product-carousel',
-  imports: [ProductImagePipe],
+  imports: [ProductImagePipe, FallbackImagePipe],
   templateUrl: './product-carousel.component.html',
   styles: `
     .swiper {
@@ -85,5 +86,10 @@ export class ProductCarouselComponent implements AfterViewInit, OnChanges {
         el: '.swiper-scrollbar',
       },
     });
+  }
+
+  onImageError(event: Event): void {
+    const target = event.target as HTMLImageElement;
+    target.src = 'assets/images/no-image.jpg'; // Path to your fallback image
   }
 }
