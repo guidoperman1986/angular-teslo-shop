@@ -20,7 +20,6 @@ export class ProductImagePipe implements PipeTransform {
       return './assets/images/no-image.jpg';
     }
 
-    console.log(`${cloudinaryUrl}/${image}`);
     return `${cloudinaryUrl}/${image}`;
   }
 }

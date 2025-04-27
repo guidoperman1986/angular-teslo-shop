@@ -33,7 +33,8 @@ export class HomePageComponent {
     request: () => ({ page: this.paginationService.currentPage() - 1 }),
     loader: ({ request }) => {
       return this.productsService.getProducts({
-        offset: request.page * 9,
+        limit: 10,
+        offset: request.page * 10,
       });
     },
   });

@@ -28,8 +28,9 @@ export class GenderPageComponent {
     }),
     loader: ({ request }) => {
       return this.productsService.getProducts({
+        limit: 10,
         gender: request.gender,
-        offset: request.page * 9,
+        offset: request.page * 10,
       });
     },
   });

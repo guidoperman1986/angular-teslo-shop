@@ -1,5 +1,8 @@
 <h1 class="text-3xl font-bold font-montserrat mt-5">Todos los productos</h1>
-<h2 class="text-xl mb-5">Para todos los gustos</h2>
+<div class="flex justify-between">
+  <h2 class="text-xl mb-5">Para todos los gustos</h2>
+  <span class="flex"><h2>Nro de Productos: &nbsp;</h2> {{ productsResource.value()?.count }}</span>
+</div>
 
 @if( productsResource.isLoading()) {
   <app-is-loading></app-is-loading>

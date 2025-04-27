@@ -2,7 +2,12 @@
   Todos los productos
   <span class="text-accent">{{ gender() }}</span>
 </h1>
-<h2 class="text-xl mb-5">Para todos los gustos</h2>
+
+<div class="flex justify-between">
+  <h2 class="text-xl mb-5">Para todos los gustos</h2>
+  <span class="flex"><h2>Nro de Productos: &nbsp;</h2> {{ productsResource.value()?.count }}</span>
+</div>
+<!-- <h2 class="text-xl mb-5">Para todos los gustos</h2> -->
 
 @if( productsResource.isLoading()) {
   <app-is-loading></app-is-loading>
