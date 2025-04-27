@@ -6,10 +6,11 @@ import { ProductsService } from '@products/services/products.service';
 
 import { PaginationComponent } from '@shared/components/pagination/pagination.component';
 import { PaginationService } from '@shared/components/pagination/pagination.service';
+import { IsLoadingComponent } from "../../../shared/components/is-loading/is-loading/is-loading.component";
 
 @Component({
   selector: 'app-home-page',
-  imports: [ProductCardComponent, PaginationComponent],
+  imports: [ProductCardComponent, PaginationComponent, IsLoadingComponent],
   templateUrl: './home-page.component.html',
 })
 export class HomePageComponent {

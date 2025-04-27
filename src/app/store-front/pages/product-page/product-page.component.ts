@@ -3,10 +3,11 @@ import { rxResource } from '@angular/core/rxjs-interop';
 import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from '@products/services/products.service';
 import { ProductCarouselComponent } from '../../../products/components/product-carousel/product-carousel.component';
+import { IsLoadingComponent } from "../../../shared/components/is-loading/is-loading/is-loading.component";
 
 @Component({
   selector: 'app-product-page',
-  imports: [ProductCarouselComponent],
+  imports: [ProductCarouselComponent, IsLoadingComponent],
   templateUrl: './product-page.component.html',
 })
 export class ProductPageComponent {

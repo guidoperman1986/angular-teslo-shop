@@ -1,10 +1,8 @@
 <h1 class="text-3xl font-bold font-montserrat mt-5">Todos los productos</h1>
 <h2 class="text-xl mb-5">Para todos los gustos</h2>
 
-@if( productsResource.isLoading() ) {
-  <div class="flex justify-center items-center h-screen">
-    <span class="loading loading-spinner loading-lg"></span>
-  </div>
+@if( productsResource.isLoading()) {
+  <app-is-loading></app-is-loading>
 }
 
 @if (productsResource.hasValue()) {

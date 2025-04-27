@@ -7,10 +7,11 @@ import { ProductCardComponent } from '@products/components/product-card/product-
 import { ProductsService } from '@products/services/products.service';
 import { PaginationComponent } from '@shared/components/pagination/pagination.component';
 import { PaginationService } from '@shared/components/pagination/pagination.service';
+import { IsLoadingComponent } from "../../../shared/components/is-loading/is-loading/is-loading.component";
 
 @Component({
   selector: 'app-gender-page',
-  imports: [ProductCardComponent, PaginationComponent],
+  imports: [ProductCardComponent, PaginationComponent, IsLoadingComponent],
   templateUrl: './gender-page.component.html',
 })
 export class GenderPageComponent {
